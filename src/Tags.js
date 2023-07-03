@@ -285,7 +285,7 @@ const App = () => {
           {generatedHashtags && (
             <div>
               <OutputSection
-                title="Generated Hashtags"
+                title="Generated Hashtags (for Instagram)"
                 content={generatedHashtags}
                 onClick={() => copyToClipboard(generatedHashtags)}
               />
@@ -294,7 +294,7 @@ const App = () => {
           {generatedSemicolon && (
             <div>
               <OutputSection
-                title="Generated Semicolon"
+                title="Generated Semicolon (for Archive.org)"
                 content={generatedSemicolon}
                 onClick={() => copyToClipboard(generatedSemicolon)}
               />
@@ -303,7 +303,7 @@ const App = () => {
           {generatedComma && (
             <div>
               <OutputSection
-                title="Generated Comma"
+                title="Generated Comma (for YouTube)"
                 content={generatedComma}
                 onClick={() => copyToClipboard(generatedComma)}
               />
