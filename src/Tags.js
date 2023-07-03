@@ -44,13 +44,63 @@ const App = () => {
   const [generatedHashtags, setGeneratedHashtags] = useState("");
   const [generatedSemicolon, setGeneratedSemicolon] = useState("");
   const [generatedComma, setGeneratedComma] = useState("");
+  const [bandName, setBandName] = useState("");
 
-  const tags = ["test1", "test2"];
-
+  const tags = [
+    "Oi!",
+    "Street Punk",
+    "Hardcore Punk",
+    "Anarcho Punk",
+    "Crust Punk",
+    "Pop Punk",
+    "Skate Punk",
+    "Melodic Hardcore",
+    "Straight Edge",
+    "Emo",
+    "Post-Hardcore",
+    "Screamo",
+    "Powerviolence",
+    "Grindcore",
+    "D-beat",
+    "Crossover Thrash",
+    "Youth Crew",
+    "Post-Punk",
+    "Gothic Punk",
+    "Horror Punk",
+    "Psychobilly",
+    "Folk Punk",
+    "Crustgrind",
+    "Thrashcore"
+  ];
   const containerRef = useRef(null);
   const outputRef = useRef(null);
   const clickTimeoutRef = useRef(null);
   const draggingRef = useRef(false);
+
+  const handleBandNameChange = (event) => {
+    setBandName(event.target.value);
+  };
+
+  const handleBandNameKeyDown = (event) => {
+    if (event.key === "Enter") {
+      const bandNameStartCase = startCaseWords(bandName);
+      const updatedTags = [
+        ...selectedTags.filter(
+          (tag) => !tag.toLowerCase().includes(bandName.toLowerCase())
+        ),
+        bandNameStartCase
+      ].sort();
+      setSelectedTags(updatedTags);
+      setBandName("");
+    }
+  };
+
+  const startCaseWords = (str) => {
+    return str
+      .split(" ")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  };
 
   const handleTagClick = (tag) => {
     if (defaultSelectedTags.includes(tag)) {
@@ -80,6 +130,7 @@ const App = () => {
 
   const clearSelectedTags = () => {
     setSelectedTags([...defaultSelectedTags]);
+    setBandName("");
   };
 
   const generateHashtags = () => {
@@ -180,8 +231,9 @@ const App = () => {
   return (
     <div>
       <h1>Hashtag Generator</h1>
+
       <div>
-        <h3>Venue:</h3>
+        <b>Venue: </b>
         <button onClick={() => handleVenueClick(venues.tripSix)}>
           Trip Six
         </button>
@@ -189,13 +241,17 @@ const App = () => {
           The End / The Compound
         </button>
       </div>
-      <div
-        ref={containerRef}
-        onMouseUp={handleMouseUp}
-        style={{ userSelect: "none" }}
-      >
+      <br />
+      <input
+        type="text"
+        value={bandName}
+        onChange={handleBandNameChange}
+        onKeyDown={handleBandNameKeyDown}
+        placeholder="Enter band name"
+      />
+      <div ref={containerRef} onMouseUp={handleMouseUp}>
         <h3>Words</h3>
-        <ul>
+        <ul style={{ listStyle: "none", paddingLeft: 16 }}>
           {tags.map((tag) => (
             <li
               key={tag}
@@ -213,15 +269,17 @@ const App = () => {
       </div>
 
       <div>
-        <h3>Selected Words:</h3>
+        <h3>
+          Selected Words:{"     "}
+          <button onClick={clearSelectedTags}>Clear Selected Words</button>
+        </h3>
         <div>
           {selectedTags.length > defaultSelectedTags.length &&
             selectedTags.join(", ")}
         </div>
         <br />
-        <button onClick={clearSelectedTags}>Clear Selected Tags</button>
       </div>
-
+      <hr />
       {selectedTags.length > defaultSelectedTags.length && (
         <>
           {generatedHashtags && (
