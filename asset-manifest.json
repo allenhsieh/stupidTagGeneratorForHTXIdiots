@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/stupidTagGeneratorForHTXIdiots/static/js/main.411fedbe.js",
+    "main.js": "/stupidTagGeneratorForHTXIdiots/static/js/main.f0bfb670.js",
     "index.html": "/stupidTagGeneratorForHTXIdiots/index.html",
-    "main.411fedbe.js.map": "/stupidTagGeneratorForHTXIdiots/static/js/main.411fedbe.js.map"
+    "main.f0bfb670.js.map": "/stupidTagGeneratorForHTXIdiots/static/js/main.f0bfb670.js.map"
   },
   "entrypoints": [
-    "static/js/main.411fedbe.js"
+    "static/js/main.f0bfb670.js"
   ]
 }
