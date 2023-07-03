@@ -248,6 +248,9 @@ const App = () => {
         onChange={handleBandNameChange}
         onKeyDown={handleBandNameKeyDown}
         placeholder="Enter band name"
+        style={{
+          minHeight: "24px", 
+        }}
       />
       <div ref={containerRef} onMouseUp={handleMouseUp}>
         <h3>Words</h3>
