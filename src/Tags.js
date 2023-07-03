@@ -229,7 +229,7 @@ const App = () => {
   }, [generatedHashtags, generatedSemicolon, generatedComma, outputRef]);
 
   return (
-    <div>
+    <div style={{ height: "90vh", overflow: "auto" }}>
       <h1>Hashtag Generator</h1>
 
       <div>
