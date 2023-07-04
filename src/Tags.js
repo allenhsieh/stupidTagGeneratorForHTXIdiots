@@ -52,37 +52,37 @@ const App = () => {
   const [bandName, setBandName] = useState("");
 
   const tags = [
-  "Anarcho-Punk",
-  "Chain punk",
-  "Crust Punk",
-  "Crustgrind",
-  "Crossover Thrash",
-  "D-beat",
-  "Egg punk",
-  "Emo",
-  "Folk Punk",
-  "Garage Punk",
-  "Gothic Punk",
-  "Grindcore",
-  "Hardcore",
-  "Hardcore Punk",
-  "Horror Punk",
-  "Melodic Hardcore",
-  "Noise Punk",
-  "Oi!",
-  "Pop Punk",
-  "Post-Hardcore",
-  "Post-Punk",
-  "Powerviolence",
-  "Psychobilly",
-  "Raw Punk",
-  "Screamo",
-  "Skate Punk",
-  "Street Punk",
-  "Straight Edge",
-  "Thrashcore",
-  "Youth Crew"
-];
+    "Anarcho-Punk",
+    "Chain punk",
+    "Crust Punk",
+    "Crustgrind",
+    "Crossover Thrash",
+    "D-beat",
+    "Egg punk",
+    "Emo",
+    "Folk Punk",
+    "Garage Punk",
+    "Gothic Punk",
+    "Grindcore",
+    "Hardcore",
+    "Hardcore Punk",
+    "Horror Punk",
+    "Melodic Hardcore",
+    "Noise Punk",
+    "Oi!",
+    "Pop Punk",
+    "Post-Hardcore",
+    "Post-Punk",
+    "Powerviolence",
+    "Psychobilly",
+    "Raw Punk",
+    "Screamo",
+    "Skate Punk",
+    "Street Punk",
+    "Straight Edge",
+    "Thrashcore",
+    "Youth Crew"
+  ];
 
   const containerRef = useRef(null);
   const outputRef = useRef(null);
@@ -131,13 +131,20 @@ const App = () => {
   };
 
   const handleVenueClick = (venueTags) => {
-    const filteredTags = venueTags.filter(
-      (tag) => !defaultSelectedTags.includes(tag)
-    );
-    setSelectedTags((prevTags) => [
-      ...defaultSelectedTags,
-      ...filteredTags.filter((tag) => !prevTags.includes(tag))
-    ]);
+    setSelectedTags((prevTags) => {
+      const filteredPrevTags = prevTags.filter(
+        (tag) => !Object.values(venues).flat().includes(tag)
+      );
+      const filteredTags = venueTags.filter(
+        (tag) => !defaultSelectedTags.includes(tag)
+      );
+      const updatedTags = [
+        ...defaultSelectedTags,
+        ...filteredPrevTags,
+        ...filteredTags
+      ];
+      return [...new Set(updatedTags)];
+    });
   };
 
   const clearSelectedTags = () => {
@@ -264,7 +271,7 @@ const App = () => {
         onKeyDown={handleBandNameKeyDown}
         placeholder="Enter band name"
         style={{
-          minHeight: "24px", 
+          minHeight: "24px"
         }}
       />
       <div ref={containerRef} onMouseUp={handleMouseUp}>
@@ -288,12 +295,12 @@ const App = () => {
 
       <div>
         <h3>
-          Selected Words:{"     "}
+          Selected Words:{" "}
           <button onClick={clearSelectedTags}>Clear Selected Words</button>
         </h3>
         <div>
           {selectedTags.length > defaultSelectedTags.length &&
-            selectedTags.join(", ")}
+            selectedTags.sort().join(", ")}
         </div>
         <br />
       </div>
