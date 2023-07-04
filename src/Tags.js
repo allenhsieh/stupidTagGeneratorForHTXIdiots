@@ -251,7 +251,7 @@ const App = () => {
   }, [generatedHashtags, generatedSemicolon, generatedComma, outputRef]);
 
   return (
-    <div style={{ height: "90vh", overflow: "auto" }}>
+    <div style={{ height: "95vh", overflow: "auto" }}>
       <h1>Hashtag Generator</h1>
 
       <div>
@@ -279,7 +279,7 @@ const App = () => {
       />
       <div ref={containerRef} onMouseUp={handleMouseUp}>
         <h3>Words</h3>
-        <ul style={{ listStyle: "none", paddingLeft: 16 }}>
+        <ul style={{ listStyle: "none", paddingLeft: 16, columnCount: 5 }}>
           {tags.map((tag) => (
             <li
               key={tag}
