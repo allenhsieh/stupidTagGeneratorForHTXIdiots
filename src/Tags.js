@@ -132,17 +132,17 @@ const App = () => {
 
   const handleVenueClick = (venueTags) => {
     setSelectedTags((prevTags) => {
+      // Filter out previously selected tags associated with any venue (excluding default selected tags)
       const filteredPrevTags = prevTags.filter(
         (tag) => !Object.values(venues).flat().includes(tag)
       );
+      // Filter out tags from venueTags array that are already present in the default selected tags
       const filteredTags = venueTags.filter(
         (tag) => !defaultSelectedTags.includes(tag)
       );
-      const updatedTags = [
-        ...defaultSelectedTags,
-        ...filteredPrevTags,
-        ...filteredTags
-      ];
+      // Merge default selected tags, filtered previously selected tags, and filtered venue tags
+      const updatedTags = [...defaultSelectedTags, ...filteredPrevTags, ...filteredTags];
+      // Remove any duplicate tags using Set object and convert back to array
       return [...new Set(updatedTags)];
     });
   };
