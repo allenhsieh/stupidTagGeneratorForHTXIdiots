@@ -136,16 +136,19 @@ const App = () => {
       const filteredPrevTags = prevTags.filter(
         (tag) => !Object.values(venues).flat().includes(tag)
       );
-      // Filter out tags from venueTags array that are already present in the default selected tags
-      const filteredTags = venueTags.filter(
-        (tag) => !defaultSelectedTags.includes(tag)
-      );
-      // Merge default selected tags, filtered previously selected tags, and filtered venue tags
-      const updatedTags = [...defaultSelectedTags, ...filteredPrevTags, ...filteredTags];
+  
+      // Merge default selected tags, filtered previously selected tags, and venue tags
+      const updatedTags = [
+        ...defaultSelectedTags,  // Include the default selected tags
+        ...filteredPrevTags,     // Include the filtered previously selected tags
+        ...venueTags             // Include the tags associated with the clicked venue
+      ];
+  
       // Remove any duplicate tags using Set object and convert back to array
       return [...new Set(updatedTags)];
     });
   };
+  
 
   const clearSelectedTags = () => {
     setSelectedTags([...defaultSelectedTags]);
