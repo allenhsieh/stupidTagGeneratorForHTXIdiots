@@ -21,9 +21,7 @@ const App = () => {
       "Trip Six HTX",
       "6230 Rupley Cir Houston TX 77087",
       "6230 Rupley Cir",
-      "77087",
-      "DIY",
-      "All Ages"
+      "77087"
     ],
     theEnd: [
       "The End",
@@ -34,9 +32,16 @@ const App = () => {
       "The Compound HTX",
       "7126 Lawndale St Houston TX 77023",
       "7126 Lawndale St",
-      "77023",
-      "DIY",
-      "All Ages"
+      "77023"
+    ],
+    eighteen: [
+      "Eighteen Ten Ojeman",
+      "Eighteen Ten Ojeman HTX",
+      "1810 Ojeman",
+      "1810 Ojeman HTX",
+      "1810 Ojeman Rd Houston TX 77080",
+      "1810 Ojeman Rd",
+      "77080"
     ]
   };
 
@@ -47,31 +52,39 @@ const App = () => {
   const [bandName, setBandName] = useState("");
 
   const tags = [
-    "Oi!",
-    "Street Punk",
-    "Hardcore Punk",
-    "Anarcho Punk",
-    "Crust Punk",
-    "Pop Punk",
-    "Skate Punk",
-    "Melodic Hardcore",
-    "Straight Edge",
-    "Emo",
-    "Post-Hardcore",
-    "Screamo",
-    "Powerviolence",
-    "Grindcore",
-    "D-beat",
-    "Crossover Thrash",
-    "Youth Crew",
-    "Post-Punk",
-    "Gothic Punk",
-    "Horror Punk",
-    "Psychobilly",
-    "Folk Punk",
-    "Crustgrind",
-    "Thrashcore"
-  ];
+  "Anarcho-Punk",
+  "Chain punk",
+  "Crust Punk",
+  "Crustgrind",
+  "Crossover Thrash",
+  "D-beat",
+  "Egg punk",
+  "Emo",
+  "Folk Punk",
+  "Garage Punk",
+  "Gothic Punk",
+  "Grindcore",
+  "Hardcore",
+  "Hardcore Punk",
+  "Horror Punk",
+  "Melodic Hardcore",
+  "Noise Punk",
+  "Oi!",
+  "Pop Punk",
+  "Post-Hardcore",
+  "Post-Punk",
+  "Powerviolence",
+  "Psychobilly",
+  "Punk Rock",
+  "Raw Punk",
+  "Screamo",
+  "Skate Punk",
+  "Street Punk",
+  "Straight Edge",
+  "Thrashcore",
+  "Youth Crew"
+];
+
   const containerRef = useRef(null);
   const outputRef = useRef(null);
   const clickTimeoutRef = useRef(null);
