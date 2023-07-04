@@ -253,6 +253,9 @@ const App = () => {
         <button onClick={() => handleVenueClick(venues.theEnd)}>
           The End / The Compound
         </button>
+        <button onClick={() => handleVenueClick(venues.eighteen)}>
+          1810 Ojeman
+        </button>
       </div>
       <br />
       <input
