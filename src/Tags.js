@@ -75,7 +75,6 @@ const App = () => {
   "Post-Punk",
   "Powerviolence",
   "Psychobilly",
-  "Punk Rock",
   "Raw Punk",
   "Screamo",
   "Skate Punk",
