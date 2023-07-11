@@ -42,7 +42,7 @@ const App = () => {
       "Eighteen Ten Ojeman",
       "Eighteen Ten Ojeman HTX"
     ],
-    mohawkAustin: [
+    mohawk: [
       "78701",
       "912 Red River St",
       "912 Red River St Austin TX 78701",
@@ -270,6 +270,9 @@ const App = () => {
         </button>
         <button onClick={() => handleVenueClick(venues.eighteen)}>
           1810 Ojeman
+        </button>
+        <button onClick={() => handleVenueClick(venues.mohawk)}>
+          Mohawk Austin
         </button>
       </div>
       <br />
