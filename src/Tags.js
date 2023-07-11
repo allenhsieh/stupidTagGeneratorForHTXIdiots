@@ -17,34 +17,40 @@ const App = () => {
 
   const venues = {
     tripSix: [
-      "Trip Six",
-      "Trip Six HTX",
-      "6230 Rupley Cir Houston TX 77087",
       "6230 Rupley Cir",
-      "77087"
+      "6230 Rupley Cir Houston TX 77087",
+      "77087",
+      "Trip Six",
+      "Trip Six HTX"
     ],
     theEnd: [
-      "The End",
-      "The Compound",
-      "The End Houston",
-      "The Compound Houston",
-      "The End HTX",
-      "The Compound HTX",
-      "7126 Lawndale St Houston TX 77023",
       "7126 Lawndale St",
-      "77023"
+      "7126 Lawndale St Houston TX 77023",
+      "77023",
+      "The Compound",
+      "The Compound HTX",
+      "The Compound Houston",
+      "The End",
+      "The End HTX"
     ],
     eighteen: [
-      "Eighteen Ten Ojeman",
-      "Eighteen Ten Ojeman HTX",
       "1810 Ojeman",
       "1810 Ojeman HTX",
-      "1810 Ojeman Rd Houston TX 77080",
       "1810 Ojeman Rd",
-      "77080"
+      "1810 Ojeman Rd Houston TX 77080",
+      "77080",
+      "Eighteen Ten Ojeman",
+      "Eighteen Ten Ojeman HTX"
+    ],
+    mohawkAustin: [
+      "78701",
+      "912 Red River St",
+      "912 Red River St Austin TX 78701",
+      "Mohawk Austin",
+      "Mohawk ATX"
     ]
   };
-
+  
   const [selectedTags, setSelectedTags] = useState([...defaultSelectedTags]);
   const [generatedHashtags, setGeneratedHashtags] = useState("");
   const [generatedSemicolon, setGeneratedSemicolon] = useState("");
