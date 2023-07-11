@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.js": "/stupidTagGeneratorForHTXIdiots/static/js/main.57456f81.js",
-    "index.html": "/stupidTagGeneratorForHTXIdiots/index.html",
-    "main.57456f81.js.map": "/stupidTagGeneratorForHTXIdiots/static/js/main.57456f81.js.map"
+    "main.js": "/TagGeneratorForShows/static/js/main.57456f81.js",
+    "index.html": "/TagGeneratorForShows/index.html",
+    "main.57456f81.js.map": "/TagGeneratorForShows/static/js/main.57456f81.js.map"
   },
   "entrypoints": [
     "static/js/main.57456f81.js"
