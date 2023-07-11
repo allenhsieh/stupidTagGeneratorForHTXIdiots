@@ -46,6 +46,7 @@ const App = () => {
       "78701",
       "912 Red River St",
       "912 Red River St Austin TX 78701",
+      "Austin",
       "Mohawk Austin",
       "Mohawk ATX"
     ]
@@ -63,6 +64,7 @@ const App = () => {
     "Crust Punk",
     "Crustgrind",
     "Crossover Thrash",
+    "Crossover",
     "D-beat",
     "Egg punk",
     "Emo",
@@ -86,6 +88,7 @@ const App = () => {
     "Skate Punk",
     "Street Punk",
     "Straight Edge",
+    "Thrash",
     "Thrashcore",
     "Youth Crew"
   ];
